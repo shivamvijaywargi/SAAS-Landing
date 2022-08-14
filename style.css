@@ -1,0 +1,280 @@
+/* https://piccalil.li/blog/a-modern-css-reset */
+
+/* Importing GOogle Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@500;700&display=swap');
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  font-family: Roboto, sans-serif;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* My Styles */
+:root {
+  --border-radius: 8px;
+
+  --box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+
+  --color-purple-dark: #7030cc;
+  --color-purple-light: #b65cd9;
+  --color-blue-light: #1bbcef;
+  --color-blue-dark: #2aa3e8;
+  --color-gray: #c4c6c6;
+  --color-dark: #353535;
+  --color-light: #fff;
+}
+
+.main {
+  background: var(--color-purple-dark);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* padding: 2rem 0; */
+}
+
+.navbar__logo {
+  width: 6rem;
+  cursor: pointer;
+}
+
+.navbar__menu {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .navbar__burger {
+    display: none;
+  }
+
+  .navbar__menu {
+    display: block;
+  }
+}
+
+.navbar__burger {
+  color: var(--color-light);
+  height: 2rem;
+  width: 2rem;
+}
+
+.navbar__items {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__item {
+  color: var(--color-light);
+  cursor: pointer;
+  list-style-type: none;
+  letter-spacing: 0.05rem;
+}
+
+.navbar__item-active {
+  color: var(--color-blue-dark);
+  border-bottom: 1px solid var(--color-purple-light);
+}
+
+.navbar__item:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.navbar__item:hover {
+  color: var(--color-blue-dark);
+}
+
+.navbar__item-btn {
+  background-color: var(--color-blue-light);
+  cursor: pointer;
+  padding: 0.7rem 1.5rem;
+}
+
+.navbar__item-btn:hover {
+  color: var(--color-light);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 1.6rem;
+}
+
+.hero__text {
+  order: 2;
+
+  margin-top: 1.6rem;
+  text-align: center;
+}
+
+.hero__text-heading {
+  color: var(--color-light);
+  font-size: 1.6rem;
+}
+
+.hero__text-paragraph {
+  color: var(--color-gray);
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+
+.hero__img {
+  order: 1;
+
+  margin-top: 1.6rem;
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hero__text {
+    order: 1;
+
+    max-width: 40%;
+    text-align: left;
+  }
+
+  .hero__text-heading {
+    font-size: 2.8rem;
+  }
+
+  .hero__img {
+    order: 2;
+
+    max-width: 50%;
+  }
+}
+
+.os__heading {
+  color: var(--color-dark);
+}
+
+.os__items {
+  color: var(--color-dark);
+  margin-top: 1rem;
+}
+
+.os__item-arrow {
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  width: 1rem;
+}
+
+.os__item {
+  display: flex;
+  align-items: flex-start;
+}
+
+.os__item p {
+  color: rgb(73, 73, 73);
+  list-style-type: none;
+}
+
+@media (min-width: 1024px) {
+  .os {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .os__img {
+    width: 50%;
+  }
+
+  .os__features {
+    width: 40%;
+  }
+
+  .os__heading {
+    width: 90%;
+  }
+
+  .os__item {
+    width: 80%;
+    margin-bottom: 0.8rem;
+  }
+}
